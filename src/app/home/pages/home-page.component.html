@@ -1,7 +1,7 @@
 <!--<div [style.background]="'#435261'">-->
 <div>
 
-    <div class="">HOME PAGE</div>
+    <div class="" *ngIf="true">HOME PAGE</div>
 
     <button pButton>eeeeeeeeeeeee</button>
 
@@ -12,17 +12,19 @@
     <div [style.color]="'#2d6fb1'">55555555555</div>
     <br>
 
-    <span class="p-float-label">
-        <input id="float-input" type="text" pInputText>
-        <label for="float-input">Username</label>
-    </span>
+    <app-text-input></app-text-input>
+
+<!--    <span class="p-float-label">-->
+<!--        <input id="float-input" type="text" pInputText>-->
+<!--        <label for="float-input">Username</label>-->
+<!--    </span>-->
     <br>
     <br>
     <br>
     <br>
     <div class="flex gap-3">
         <button pButton type="button" class="p-button-info"></button>
-        <button pButton type="button" label="Primary"></button>
+        <app-primary-button></app-primary-button>
         <button pButton type="button" label="Secondary" class="p-button-secondary"></button>
         <button pButton type="button" label="Success" class="p-button-success"></button>
         <button pButton type="button" label="Info" class="p-button-info"></button>

@@ -1,13 +1,12 @@
-import { NgModule } from '@angular/core'
-import { CommonModule } from '@angular/common'
-import { ProfileService } from './services'
+import { NgModule } from "@angular/core";
+import { ComponentsModule } from "./components/components.module";
+
+const modules = [
+    ComponentsModule
+]
 
 @NgModule({
-    imports: [
-        CommonModule
-    ],
-    providers: [
-        ProfileService
-    ]
+    imports: modules,
+    exports: modules,
 })
 export class SharedModule { }
