@@ -1,0 +1,12 @@
+<span
+    class="input-text p-float-label"
+    [class.has-value]="controlData.control.value"
+>
+    <input
+        [formControl]="controlData.control"
+        [id]="controlData.id"
+        [type]="controlData.type || 'text'"
+        pInputText
+    >
+    <label [for]="controlData.id">{{ controlData.label || '' }}</label>
+</span>

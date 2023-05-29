@@ -1,0 +1,33 @@
+@import "../../../assets/less/variables/colors.less";
+
+.input-text.p-float-label {
+    width: 100%;
+
+    .p-inputtext {
+        width: 100%;
+        caret-color: @color-secondary;
+    }
+
+    .p-inputtext:enabled:focus {
+        box-shadow: 0px 0px 0px 4px rgba(@color-secondary, 0.2);
+        border-color: @color-secondary;
+    }
+
+    &.has-value .p-inputtext {
+        border-color: @color-secondary;
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    border-color: @color-secondary;
+    -webkit-text-fill-color: @color-primary !important;
+}
+
+input:-webkit-autofill ~ label {
+    top: -0.75rem !important;
+    font-size: 12px !important;
+}

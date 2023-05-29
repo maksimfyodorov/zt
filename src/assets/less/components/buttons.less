@@ -1,0 +1,23 @@
+@import "../../../assets/less/variables/colors.less";
+
+.button-mixin() {
+    width: 100%;
+    color: #fff !important;
+}
+
+.p-button:focus {
+    box-shadow: none !important;
+}
+
+.button {
+    .button-mixin();
+
+    &._primary {
+        background: @color-secondary;
+        border-color: @color-secondary;
+        &:hover {
+            background: @color-secondary-light;
+            border-color: @color-secondary-light;
+        }
+    }
+}

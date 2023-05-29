@@ -1,4 +1,13 @@
-<h1 >auth works!</h1>
-<h2 >auth works!</h2>
-
-<app-text-input></app-text-input>
+<div class="auth-page flex-col align-items-center gap-5 p-6">
+    <i class="icon pi pi-sync text-7xl" [class.pi-spin]="isLoading"></i>
+    <h1 class="title font-light">Sign in to {{ projectName }}</h1>
+    <form class="form flex-col gap-5 w-25rem" [formGroup]="form">
+        <app-input-text [controlData]="emailControlData"></app-input-text>
+        <app-input-text [controlData]="passwordControlData"></app-input-text>
+        <app-button-primary
+            [label]="'Sign in'"
+            (clicked)="login()"
+        ></app-button-primary>
+    </form>
+    <div class="auth-error w-25rem p-3 bg-error border-round-sm text-center" *ngIf="isAuthError">Incorrect username or password.</div>
+</div>

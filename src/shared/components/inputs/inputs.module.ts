@@ -1,15 +1,15 @@
 import { NgModule } from "@angular/core";
-import { TextInputComponent } from "./text-input/text-input.component";
 import { CoreModule } from "../../../core/core.module";
+import { InputTextComponent } from "./input-text/input-text.component";
 
 const components = [
-    TextInputComponent
+    InputTextComponent
 ]
 
 @NgModule({
-    imports: [
-        CoreModule,
-    ],
+  imports: [
+    CoreModule,
+  ],
     declarations: components,
     exports: components,
 })

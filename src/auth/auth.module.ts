@@ -13,8 +13,8 @@ const routes: Routes = [
       AuthComponent
   ],
   imports: [
-      SharedModule,
-      RouterModule.forChild(routes),
-  ]
+    SharedModule,
+    RouterModule.forChild(routes),
+  ],
 })
 export class AuthModule { }

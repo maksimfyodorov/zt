@@ -15,23 +15,21 @@ export class ProfileService {
     ) {}
 
     getProfile() {
-        // return this.http
-        //     .get('https://jsonplaceholder.typicode.com/users')
-        //     .pipe(
-        //         map((users) => (users as any[])[0]),
-        //         delay(1000)
-        //     )
-
         const profile = JSON.parse(localStorage.getItem('profile') || '{}')
         return of(Object.keys(profile).length ? profile : null);
     }
 
     handleGetProfileResult(profile: any) {
         if (profile) {
-            this.profile$.next(profile)
+            this.setProfile(profile, true)
             this.router.goToApp()
         } else {
             this.router.goToAuth()
         }
+    }
+
+    setProfile(profile: any, withoutLocalStorage?: boolean) {
+        this.profile$.next(profile)
+        !withoutLocalStorage && localStorage.setItem('profile', JSON.stringify(profile))
     }
 }
