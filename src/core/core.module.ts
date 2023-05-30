@@ -5,11 +5,13 @@ import { PrimeNgModule } from "./prime-ng/prime-ng.module";
 import { PipesModule } from "./pipes/pipes.module";
 import { DirectivesModule } from "./directives/directives.module";
 import { ReactiveFormsModule } from "@angular/forms";
+import { RouterModule } from "@angular/router";
 
 const modules = [
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
+    RouterModule,
     PrimeNgModule,
     PipesModule,
     DirectivesModule

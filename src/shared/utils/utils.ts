@@ -1,5 +1,5 @@
 import { FormControl } from "@angular/forms";
-import { ControlDataModel } from "../inputs/models/control-data.model";
+import { ControlDataModel } from "../components/inputs/models/control-data.model";
 
 export function getControlData(
     control: FormControl,

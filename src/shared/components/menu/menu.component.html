@@ -1,0 +1,17 @@
+<aside
+    class="menu flex-col"
+    *ngIf="!!(profile$ | async)"
+>
+    <nav class="menu-nav flex-col mt-6 gap-3 w-full overflow-hidden">
+        <ng-container *ngFor="let link of navLinks">
+            <a
+              class="nav-link"
+              [routerLink]="link.path"
+              routerLinkActive="_active"
+            >
+                <i class="pi" [class]="link.iconClass"></i>
+                <span class="nav-link-text">{{ link.text }}</span>
+            </a>
+        </ng-container>
+    </nav>
+</aside>

@@ -1,0 +1,48 @@
+@import "../../../assets/less/variables/colors";
+@import "../../../assets/less/variables/shadows";
+
+.menu {
+    position: fixed;
+    top: 0;
+    min-height: 100%;
+    width: 80px;
+    background: #ffffff;
+    overflow: hidden;
+    padding: 25px 12px 25px 32px;
+    border-right: 0.6px solid @color-border;
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+
+    &:hover {
+        width: 180px;
+        filter: @shadow-menu;
+
+        .menu-nav {
+            align-items: flex-start;
+        }
+
+        .nav-link:hover {
+            color: @color-link-light;
+        }
+
+        .nav-link-text {
+            display: block;
+        }
+    }
+
+    .nav-link {
+        display: flex;
+        align-items: center;
+        height: 19px;
+        gap: 1rem;
+        white-space: nowrap;
+        color: @color-link;
+        &._active {
+            color: @color-link-light;
+        }
+    }
+
+    .nav-link-text {
+        display: none;
+    }
+}

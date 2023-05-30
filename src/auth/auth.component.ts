@@ -6,7 +6,7 @@ import { AuthService } from "../shared/root-services/auth.service";
 import { delay, take } from "rxjs";
 import { RouterService } from "../shared/root-services/router.service";
 import { ProfileService } from "../shared/root-services/profile.service";
-import { getControlData } from "shared/components/utils/utils";
+import { getControlData } from "shared/utils/utils";
 
 @Component({
   selector: 'app-auth',
