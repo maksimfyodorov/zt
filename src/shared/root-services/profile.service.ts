@@ -10,6 +10,7 @@ const PROFILE = 'profile'
 })
 export class ProfileService {
     profile$ = new BehaviorSubject<any>(null)
+    isProfilePage = false
 
     constructor(
         private http: HttpClient,

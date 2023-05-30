@@ -11,7 +11,7 @@ export class HeaderComponent {
     profile$ = this.profileService.profile$
 
     constructor(
-        private profileService: ProfileService,
+        public profileService: ProfileService,
         private authService: AuthService
     ) {}
 

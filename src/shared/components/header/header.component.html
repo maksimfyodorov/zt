@@ -6,6 +6,7 @@
     <div class="spacer"></div>
     <a
         class="link flex gap-2 align-items-center"
+        *ngIf="!profileService.isProfilePage"
         routerLink="/profile"
     >
         <i class="pi pi-user"></i>
