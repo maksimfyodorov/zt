@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, delay, interval, map, of, take, tap } from "rxjs";
+import { Injectable } from "@angular/core";
+import { BehaviorSubject, of } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { RouterService } from "./router.service";
+
+const PROFILE = 'profile'
 
 @Injectable({
     providedIn: 'root'
@@ -15,7 +17,7 @@ export class ProfileService {
     ) {}
 
     getProfile() {
-        const profile = JSON.parse(localStorage.getItem('profile') || '{}')
+        const profile = JSON.parse(localStorage.getItem(PROFILE) || '{}')
         return of(Object.keys(profile).length ? profile : null);
     }
 
@@ -30,6 +32,12 @@ export class ProfileService {
 
     setProfile(profile: any, withoutLocalStorage?: boolean) {
         this.profile$.next(profile)
-        !withoutLocalStorage && localStorage.setItem('profile', JSON.stringify(profile))
+        !withoutLocalStorage && localStorage.setItem(PROFILE, JSON.stringify(profile))
+    }
+
+    destroyProfile() {
+        this.profile$.next(null)
+        localStorage.removeItem(PROFILE)
+        this.router.goToAuth()
     }
 }

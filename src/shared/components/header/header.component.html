@@ -1,0 +1,15 @@
+<header class="header h-4rem flex align-items-center gap-3">
+    <span class="user-name">{{ (profile$ | async)?.name }}</span>
+    <div class="spacer"></div>
+    <a class="link flex gap-2 align-items-center" routerLink="/auth">
+        <i class="pi pi-user"></i>
+        <span>Profile</span>
+    </a>
+    <div
+        class="logout flex align-items-center gap-2 cursor-pointer"
+        (click)="logout()"
+    >
+        <span>Sign out</span>
+        <i class="pi pi-sign-out"></i>
+    </div>
+</header>
