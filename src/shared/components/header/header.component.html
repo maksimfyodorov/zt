@@ -1,7 +1,13 @@
-<header class="header h-4rem flex align-items-center gap-3">
+<header
+    class="header h-4rem flex align-items-center gap-3"
+    *ngIf="profile$ | async"
+>
     <span class="user-name">{{ (profile$ | async)?.name }}</span>
     <div class="spacer"></div>
-    <a class="link flex gap-2 align-items-center" routerLink="/auth">
+    <a
+        class="link flex gap-2 align-items-center"
+        routerLink="/profile"
+    >
         <i class="pi pi-user"></i>
         <span>Profile</span>
     </a>
