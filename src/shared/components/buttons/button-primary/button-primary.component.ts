@@ -7,5 +7,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 })
 export class ButtonPrimaryComponent {
     @Input() label = 'Click me'
+    @Input() disabled = false
+    @Input() loading = false
     @Output() clicked = new EventEmitter<boolean>()
 }

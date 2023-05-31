@@ -1,12 +1,26 @@
 <span
-    class="input-text p-float-label"
-    [class.has-value]="controlData.control.value"
+    class="input-text p-float-label relative"
+    [class._has-value]="controlData.control.valid && controlData.control.value"
 >
     <input
+        [class._error]="controlData.control.errors?.['backendError']"
         [formControl]="controlData.control"
         [id]="controlData.id"
         [type]="controlData.type || 'text'"
+        [maxlength]="controlData.maxlength || 255"
+        [mask]="controlData.mask"
+        [prefix]="controlData.prefix"
         pInputText
     >
-    <label [for]="controlData.id">{{ controlData.label || '' }}</label>
+    <label [for]="controlData.id">
+        {{ controlData.label || '' }}
+        <ng-container *ngIf="isRequired">*</ng-container>
+    </label>
+    <span
+        class="error px-3 py-2 border-round-sm bg-error ml-3 absolute"
+        *ngIf="controlData.control.errors?.['backendError']"
+    >
+        <span class="arrow-left absolute"></span>
+        {{ controlData.control.errors?.['backendError'] }}
+    </span>
 </span>

@@ -2,8 +2,25 @@
     class="header h-4rem flex align-items-center gap-3"
     *ngIf="profile$ | async"
 >
-    <span class="user-name">{{ (profile$ | async)?.name }}</span>
+    <span class="user-name flex gap-2">
+        <span class="text-ellipsis">{{ firstName }}</span>
+        <span class="text-ellipsis">{{ lastName }}</span>
+    </span>
+
     <div class="spacer"></div>
+
+    <div
+        class="update-profile-message px-3 py-2 border-round-sm flex gap-3 align-items-baseline"
+        [ngClass]="'bg-' + updateProfileMessage?.type"
+        *ngIf="updateProfileMessage$ | async"
+    >
+        {{ updateProfileMessage?.text }}
+        <i
+            class="pi pi-times cursor-pointer text-sm"
+            (click)="deleteMessage()"
+        ></i>
+    </div>
+
     <a
         class="link flex gap-2 align-items-center"
         *ngIf="!profileService.isProfilePage"
@@ -12,6 +29,7 @@
         <i class="pi pi-user"></i>
         <span>Profile</span>
     </a>
+
     <div
         class="logout flex align-items-center gap-2 cursor-pointer"
         (click)="logout()"

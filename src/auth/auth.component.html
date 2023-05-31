@@ -7,6 +7,7 @@
         <app-button-primary
             [label]="'Sign in'"
             (clicked)="login()"
+            [disabled]="isLoading"
         ></app-button-primary>
     </form>
     <div class="auth-error w-25rem p-3 bg-error border-round-sm text-center" *ngIf="isAuthError">Incorrect username or password.</div>

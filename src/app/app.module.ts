@@ -5,8 +5,12 @@ import { AppComponent } from "./app.component";
 import { ProfileService } from "../shared/root-services/profile.service";
 import { Observable, take, tap } from "rxjs";
 import { SharedModule } from "../shared/shared.module";
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { ProfileModel } from "./profile/models/profile.model";
 
-function initialize(profileService: ProfileService,): () => Observable<any> {
+export const options: Partial<IConfig> | (() => Partial<IConfig>) | null = null;
+
+function initialize(profileService: ProfileService,): () => Observable<ProfileModel> {
     return () => profileService.getProfile()
         .pipe(
             tap(profile => profileService.handleGetProfileResult(profile)),
@@ -22,6 +26,7 @@ function initialize(profileService: ProfileService,): () => Observable<any> {
         BrowserModule,
         AppRoutingModule,
         SharedModule,
+        NgxMaskModule.forRoot(),
     ],
     providers: [
         {

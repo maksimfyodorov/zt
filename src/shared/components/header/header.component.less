@@ -3,7 +3,14 @@
 
 .header {
     border-bottom: @border-primary;
-    padding: 1rem 7rem;
+    padding: 1rem 1.5rem 1rem 7rem;
+
+    .user-name {
+        width: 507px;
+        & span {
+            max-width: 250px;
+        }
+    }
 
     .logout:hover {
         color: @color-primary-light;

@@ -1,1 +1,16 @@
-<p>profile-page works!</p>
+<main class="profile-page page-layout">
+    <h1 class="title">Profile</h1>
+    <form class="form flex-col gap-5 w-25rem" [formGroup]="form">
+        <app-input-text [controlData]="emailControlData"></app-input-text>
+        <app-input-text [controlData]="firstNameControlData"></app-input-text>
+        <app-input-text [controlData]="lastNameControlData"></app-input-text>
+        <app-input-text [controlData]="phoneNumberControlData"></app-input-text>
+        <app-input-text [controlData]="websiteUrlControlData"></app-input-text>
+        <app-button-primary
+            [label]="'Update profile'"
+            [disabled]="form.invalid || isLoading"
+            [loading]="isLoading"
+            (clicked)="update()"
+        ></app-button-primary>
+    </form>
+</main>

@@ -6,7 +6,6 @@ import { AuthService } from "../shared/root-services/auth.service";
 import { delay, take } from "rxjs";
 import { RouterService } from "../shared/root-services/router.service";
 import { ProfileService } from "../shared/root-services/profile.service";
-import { getControlData } from "shared/utils/utils";
 
 @Component({
   selector: 'app-auth',
@@ -64,16 +63,17 @@ export class AuthComponent implements OnInit {
     }
 
     private getControlsData() {
-        this.emailControlData = getControlData(
-            (this.form.get('email') as FormControl),
-            'auth-page-email',
-            'Email address',
-        );
-        this.passwordControlData = getControlData(
-            (this.form.get('password') as FormControl),
-            'auth-page-password',
-            'Password',
-            'password',
-        );
+        this.emailControlData = {
+            control: this.form.get('email') as FormControl,
+            id: 'auth-page-email',
+            label: 'Email address',
+        } as ControlDataModel
+
+        this.passwordControlData = {
+            control: this.form.get('password') as FormControl,
+            id: 'auth-page-password',
+            label: 'Password',
+            type: 'password'
+        } as ControlDataModel
     }
 }

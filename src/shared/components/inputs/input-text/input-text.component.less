@@ -1,3 +1,20 @@
+@import "../../../../assets/less/variables/colors.less";
+
 :host {
     width: 100%;
+}
+
+.error {
+    width: max-content;
+}
+
+.arrow-left {
+    left: -0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid transparent;
+    border-right: 0.5rem solid rgba(@color-error, .4);
 }

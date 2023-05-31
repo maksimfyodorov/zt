@@ -5,4 +5,7 @@ export interface ControlDataModel {
     type: string | boolean,
     id: string,
     label: string,
+    mask: string,
+    prefix: string,
+    maxlength: number,
 }

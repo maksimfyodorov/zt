@@ -15,7 +15,7 @@ export class RouterService {
         this.goTo(["/auth"])
     }
 
-    private goTo(commands: any) {
+    private goTo(commands: string[]) {
         this.router.navigate(commands)
     }
 }

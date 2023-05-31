@@ -6,6 +6,12 @@
     .p-inputtext {
         width: 100%;
         caret-color: @color-secondary;
+        &._error {
+            border-color: @color-prime-ng-error;
+            & + label {
+                color: @color-prime-ng-error;
+            }
+        }
     }
 
     .p-inputtext:enabled:focus {
@@ -13,7 +19,7 @@
         border-color: @color-secondary;
     }
 
-    &.has-value .p-inputtext {
+    &._has-value .p-inputtext {
         border-color: @color-secondary;
     }
 }
